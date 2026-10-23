@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import axios from 'axios';
 import { Loader } from 'components/Loader';
 import { ProjectCard } from 'components/projects/ProjectCard';
@@ -12,7 +12,7 @@ interface Props {
 
 export const ProjectsList: React.FC<Props> = ({ type }) => {
   const [projectsData, setProjectsData] = useState([]);
-  const { getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 

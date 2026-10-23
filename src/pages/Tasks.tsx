@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import { LeftSideBar } from 'components/LeftSideBar';
 import { TaskList } from 'components/tasks/TaskList';
 import { TopFilter } from 'components/TopFilter';
@@ -19,7 +19,7 @@ interface Props extends RouteComponentProps<RouteParams> {}
 export const Tasks: React.FC<Props> = ({ match }) => {
     const [showMenu, setShowMenu] = useState(false);
     const dispatch = useDispatch();
-    const { getAccessTokenSilently } = useAuth0();
+    const { getAccessTokenSilently } = useAuth();
     const { projectData } = useSelector((state: RootState) => state.currentProject);
 
     useEffect(() => {

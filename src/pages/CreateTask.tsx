@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import DateFnsUtils from '@date-io/date-fns';
 import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import { MaterialUiPickersDate } from '@material-ui/pickers/typings/date';
@@ -57,7 +57,7 @@ export const CreateTask: React.FC<Props> = ({ match, history, location }) => {
     const { memberList } = useSelector((state: RootState) => state);
     const memberIds = memberList.members.map((member: Member) => member._id);
 
-    const { getAccessTokenSilently } = useAuth0();
+    const { getAccessTokenSilently } = useAuth();
 
     const onAssigneeSelect = (member: Member) => {
         setAssignee(member);
@@ -137,7 +137,7 @@ export const CreateTask: React.FC<Props> = ({ match, history, location }) => {
                                 <GitIssueIcon className="w-3 mr-1" />
                                 <span>{projectData.project.title}</span>
                             </span>
-                            <span className="ml-2 font-normal text-gray-700">› New Task</span>
+                            <span className="ml-2 font-normal text-gray-700">â€º New Task</span>
                         </div>
                         <div className="flex items-center">
                             <Link

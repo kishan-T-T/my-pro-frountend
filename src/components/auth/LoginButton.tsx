@@ -1,7 +1,7 @@
-import { useAuth0 } from "@auth0/auth0-react";
+﻿import { useAuth } from 'auth/useAuth';
 
 export const LoginButton = () => {
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect } = useAuth();
   return (
     <button
       className="btn btn-primary btn-block"

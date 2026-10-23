@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NODE_OPTIONS = "--openssl-legacy-provider"
+  REACT_APP_SERVER_URL = "https://YOUR-SERVICE-NAME.onrender.com"
+  REACT_APP_SUPABASE_URL = "https://huklxqcwsgmuqohwkrme.supabase.co"
+  REACT_APP_SUPABASE_ANON_KEY = "sb_publishable_PEY91FDzG5hfo_EXOMX9kQ_dIMtUtsd"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

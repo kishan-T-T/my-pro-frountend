@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import { Button, TextField } from '@material-ui/core';
 import axios from 'axios';
 import { Formik } from 'formik';
@@ -23,7 +23,7 @@ const ValidationSchema = Yup.object().shape({
 });
 
 export const ProfileForm: React.FC<Props> = ({ setAuthenticated, title, user, redirect }) => {
-  const { getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently } = useAuth();
   const history = useHistory();
   const userData = {
     username: user?.username || '',

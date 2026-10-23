@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import DateFnsUtils from '@date-io/date-fns';
 import { CircularProgress } from '@material-ui/core';
 import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
@@ -48,7 +48,7 @@ export const RightSideBar: React.FC<Props> = ({ showMenu, onCloseMenu }) => {
   const { error, loading, success } = useSelector((state: RootState) => state.updateTask);
   const dispatch = useDispatch();
   const params = useParams<URLParams>();
-  const { getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently } = useAuth();
   const classes = classNames(
     `absolute lg:static inset-0 transform duration-300 lg:relative lg:translate-x-0 bg-white flex flex-col flex-shrink-0 w-80 font-sans text-sm text-gray-700 border-l border-gray-100 lg:shadow-none justify-items-start h-screen`,
     {

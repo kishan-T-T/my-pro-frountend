@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import { CircularProgress } from '@material-ui/core';
 import { HistoryRow } from 'components/history/HistoryRow';
 import { LeftSideBar } from 'components/LeftSideBar';
@@ -27,7 +27,7 @@ export const TaskHistory: React.FC<Props> = () => {
   const [showMenu, setShowMenu] = useState(false);
   const { history, loading, error } = useSelector((state: RootState) => state.taskHistory);
   const dispatch = useDispatch();
-  const { getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently } = useAuth();
   const params = useParams<URLParams>();
 
   useEffect(() => {

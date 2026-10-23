@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import { Button } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditRoundedIcon from '@material-ui/icons/EditRounded';
@@ -29,7 +29,7 @@ export const ProjectCard: React.FC<Props> = ({ projectData, setProjectsData }) =
     dispatch(setCurrentProject(projectData));
   };
 
-  const { getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently } = useAuth();
 
   const onDelete = async () => {
     showWarning('Please wait while the project is being deleted.', 'Deleting Project');

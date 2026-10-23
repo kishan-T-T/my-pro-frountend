@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import { Button, FormHelperText, useMediaQuery } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import axios from 'axios';
@@ -23,7 +23,7 @@ interface MatchParams {
 }
 export const AddMembers: React.FC<Props> = () => {
     const [users, setUsers] = useState([]);
-    const { getAccessTokenSilently } = useAuth0();
+    const { getAccessTokenSilently } = useAuth();
     const isMobile = useMediaQuery('(max-width:600px)');
     const match = useRouteMatch<MatchParams>();
     const [error, setError] = useState(false);

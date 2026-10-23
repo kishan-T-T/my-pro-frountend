@@ -1,10 +1,10 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import React from 'react';
 
 interface Props {}
 
 export const Nav: React.FC<Props> = () => {
-    const { loginWithRedirect } = useAuth0();
+    const { loginWithRedirect } = useAuth();
 
     return (
         <>

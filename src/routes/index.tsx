@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import axios from 'axios';
 import { Loader } from 'components/Loader';
 import { showError } from 'components/Notification';
@@ -13,7 +13,7 @@ interface Props {}
 
 export const Routes: React.FC<Props> = () => {
     const [authenticated, setAuthenticated] = useState(false);
-    const { user: userAith0, isAuthenticated, getAccessTokenSilently, user, isLoading } = useAuth0();
+    const { user: userAith0, isAuthenticated, getAccessTokenSilently, user, isLoading } = useAuth();
     // const [user, setUser] = useState();
     const [appLoading, setAppLoading] = useState(true);
     const location = useLocation();

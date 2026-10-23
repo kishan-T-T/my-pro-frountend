@@ -1,5 +1,5 @@
 import { StylesProvider, ThemeProvider } from '@material-ui/core';
-import { Auth0ProviderWithHistory } from 'auth/auth0-provider-with-history';
+import { AuthProvider } from 'auth/useAuth';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -15,9 +15,9 @@ ReactDOM.render(
     <StylesProvider injectFirst>
       <Provider store={store}>
         <BrowserRouter>
-          <Auth0ProviderWithHistory>
+          <AuthProvider>
             <App />
-          </Auth0ProviderWithHistory>
+          </AuthProvider>
         </BrowserRouter>
       </Provider>
     </StylesProvider>

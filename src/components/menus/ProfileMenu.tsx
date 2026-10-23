@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import { Transition } from '@headlessui/react';
 import classnames from 'classnames';
 import { useClickOutside } from 'hooks/useClickOutside';
@@ -22,7 +22,7 @@ export const ProfileMenu = ({ isOpen, className, onDismiss }: Props) => {
 
     const { projectData } = useSelector((state: RootState) => state.currentProject);
 
-    const { logout } = useAuth0();
+    const { logout } = useAuth();
 
     useClickOutside(ref, () => {
         if (ready && isOpen && onDismiss) {

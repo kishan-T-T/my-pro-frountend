@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import { useMediaQuery } from '@material-ui/core';
 import axios from 'axios';
 import { Loader } from 'components/Loader';
@@ -20,7 +20,7 @@ export const MemberList: React.FC<Props> = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [members, setMembers] = useState([]);
-    const { getAccessTokenSilently } = useAuth0();
+    const { getAccessTokenSilently } = useAuth();
     const match = useRouteMatch<MatchParams>();
     const isMobile = useMediaQuery('(max-width:600px)');
 

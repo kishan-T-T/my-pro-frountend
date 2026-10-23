@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+﻿import { useAuth } from 'auth/useAuth';
 import { DragDropContext, DropResult, ResponderProvided } from 'react-beautiful-dnd';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
@@ -32,7 +32,7 @@ export const TasksBoard = () => {
     );
 
     const match = useRouteMatch<MatchParams>();
-    const { getAccessTokenSilently } = useAuth0();
+    const { getAccessTokenSilently } = useAuth();
 
     // dispatch
     const dispatch = useDispatch<AppDispatch>();
